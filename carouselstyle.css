@@ -1,0 +1,258 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  margin: 0rem;
+  padding:0rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#image-track {
+  display: flex;
+  gap: 4vmin;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(0%, -50%);
+  user-select: none; /* -- Prevent image highlighting -- */
+}
+
+#image-track > .image {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% center;
+  cursor: pointer;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.image-container {
+  all: unset;
+  display: block;
+  cursor: pointer;
+  height: 55vh;
+  width: 30vw;
+}
+
+#myImg:hover {
+  opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 999; /* Sit on top */
+  padding: 5% 0; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.95); /* Black w/ opacity */
+}
+
+.modal-img-div {
+  width: 70%;
+  margin: 0 auto;
+  height: 90%;
+}
+/* Modal Content (Image) */
+.modal-content {
+ 
+  display: block;
+  width: 100%;
+  height:100%;
+  object-fit: contain;
+
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+
+
+/* Add Animation - Zoom in the Modal */
+.modal-content,
+#caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+.art-cataloge-type {
+  font-family: inherit;
+  color: whitesmoke;
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+  font-size: xx-large;
+}
+
+.description-page,
+.image-track,
+.art-cataloge-type,
+.image-container {
+  animation: fadeIn ease 5s;
+  -webkit-animation: fadeIn ease 5s;
+  -moz-animation: fadeIn ease 5s;
+  -o-animation: fadeIn ease 5s;
+  -ms-animation: fadeIn ease 5s;
+}
+
+.back-icon{
+  position: absolute;
+  top:10%;
+  margin:1.5rem;
+  margin-left:3%;
+}
+
+.font-icon{
+  font-size: 2.7rem;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .image-container {
+    width: 45vw;
+    height: 50vh;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .image-container {
+    width: 75vw;
+    height: 45vh;
+  }
+  #image-track {
+    flex-direction: column;
+    gap: 2em;
+    position: static;
+    transform: none;
+    user-select: none;
+margin-top:13%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .art-cataloge-type {
+    display: none;
+  }
+}
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 500px) {
+  .modal-content {
+    width: 100%;
+  }
+  .back-icon{
+    margin: 0.8rem 1.5rem;
+    top:8%;
+  }
+ .font-icon{
+  font-size: 2rem;
+ }
+ 
+}
+@media only screen and (max-width: 900px){
+  .back-icon{
+    display: none;
+  }
+}
